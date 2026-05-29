@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&M Partners Construction Services Co. Ltd. | Home</title>
+  <!-- Google Fonts for replicating the bold typography and sleek body font -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* --- SYSTEM RESET & FOUNDATION --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #333333;
+      background-color: #ffffff;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* --- GLOBAL NAVBAR NAVIGATION --- */
+    header {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #eaeaea;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .logo-box {
+      width: 32px;
+      height: 32px;
+      background-color: #E31B23; /* Signature Red Logo Box */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 24px;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 0;
+      transition: color 0.2s ease;
+    }
+    nav ul li a:hover, nav ul li.active > a {
+      color: #E31B23;
+    }
+
+    /* Navbar Projects Dropdown Logic */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+      border-top: 3px solid #E31B23;
+      padding: 8px 0;
+    }
+    .dropdown-menu li {
+      width: 100%;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 14px;
+      color: #333333;
+    }
+    .dropdown-menu li a:hover {
+      background-color: #f5f5f5;
+      color: #E31B23;
+    }
+    nav ul li:hover .dropdown-menu {
+      display: block;
+    }
+
+    /* --- HERO REPLICATED BACKGROUND BANNER --- */
+    .hero-banner {
+      position: relative;
+      background: #fdfdfd;
+      text-align: center;
+      padding: 100px 20px;
+      border-bottom: 1px solid #f0f0f0;
+      /* Blueprint blueprint pattern representation background overlay */
+      background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="40" height="40" viewBox="0 0 40 40"><rect width="40" height="40" fill="none" stroke="%23ececec" stroke-width="0.5"/></svg>');
+    }
+    .hero-banner h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #111111;
+      margin-bottom: 10px;
+    }
+    .hero-slogan {
+      font-size: 16px;
+      color: #555555;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      font-weight: 400;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #E31B23;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+      box-shadow: 0 4px 6px rgba(227, 27, 35, 0.2);
+    }
+    .cta-button:hover {
+      background-color: #b81117;
+    }
+
+    /* --- HOME SERVICE TILES MATRIX --- */
+    .main-content {
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 0 20px;
+      flex: 1;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-color: #cbd5e1;
+    }
+    .service-card h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      letter-spacing: 0.5px;
+      color: #111111;
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      font-size: 15px;
+      color: #666666;
+      margin-bottom: 20px;
+    }
+    .card-link {
+      color: #E31B23;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* --- GLOBAL FOOTER COMPONENT --- */
+    footer {
+      background-color: #1a1a1a;
+      color: #a3a3a3;
+      padding: 25px 20px;
+      text-align: center;
+      font-size: 13px;
+      border-top: 4px solid #E31B23;
+    }
+    footer p {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- RESPONSIVE ADAPTATIONS --- */
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-banner h1 {
+        font-size: 32px;
+      }
+      nav ul {
+        display: none; /* Simplifies mobile representation for development */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GLOBAL NAVIGATION HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <div class="logo-box">𝝡</div>
+        C&M PARTNERS
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li>
+            <a href="#">Projects ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="residential.html">Residential</a></li>
+              <li><a href="commercial.html">Commercial</a></li>
+              <li><a href="institutional.html">Institutional</a></li>
+              <li><a href="interior-fitout.html">Interior Fit-Out</a></li>
+              <li><a href="minor-renovation.html">Minor Renovation</a></li>
+              <li><a href="office-fitout.html">Office Fit-Out</a></li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services Offered</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="staff.html">Staff</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- REPLICATED BRAND HERO TEXT SECTION -->
+  <section class="hero-banner">
+    <h1>C&M PARTNERS CONSTRUCTION SERVICES CO. LTD.</h1>
+    <p class="hero-slogan">Dream Design Develop — Turn your dream house into reality, design your ideas, and develop your perspective.</p>
+    <!-- Fixed spelling error from your mockup link button -->
+    <a href="contact.html" class="cta-button">GET A FREE QUOTE NOW</a>
+  </section>
+
+  <!-- SERVICE ACCESS DASHBOARD TILES -->
+  <main class="main-content">
+    <div class="services-grid">
+      
+      <!-- CARD 1 -->
+      <div class="service-card">
+        <div>
+          <h2>About Us</h2>
+          <p>Learn more about our company background, mission, values, and our foundational history built around engineering excellence since 2008.</p>
+        </div>
+        <a href="about.html" class="card-link">Read Our Story &rarr;</a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="service-card">
+        <div>
+          <h2>Our Projects</h2>
+          <p>Explore our complete residential and commercial construction gallery showcasing structural layouts completed across Metro Manila.</p>
+        </div>
+        <a href="residential.html" class="card-link">View Portfolio &rarr;</a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="service-card">
+        <div>
+          <h2>Services We Offer</h2>
+          <p>From custom space planning and technical cost estimations to clean interior fit-outs and turnkey building delivery.</p>
+        </div>
+        <a href="services.html" class="card-link">View Services &rarr;</a>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="service-card">
+        <div>
+          <h2>Contact Us</h2>
+          <p>Get in touch with our operations team, find our physical office building coordinates, or request a blueprint construction quotation.</p>
+        </div>
+        <a href="contact.html" class="card-link">Get Connected &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- GLOBAL FIXED REPLICATED FOOTER WITH AUTOMATIC YEAR CALCULATOR -->
+  <footer>
+    <p>Copyright &copy; 2021 - <span id="current-year"></span> C&M Partners Construction Services Co. Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Automatically injects the correct current year into the footer layout markup
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
