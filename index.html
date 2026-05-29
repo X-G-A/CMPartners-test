@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+    }
+    .slider {
+      width: 1300px;
+      max-width: 100vw;
+      height: 700px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+    .list {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      display: flex;
+      width: max-content;
+      transition: 1s;
+    }
+    .list img{
+      width: 1300px;
+      max-width: 100vw;
+      height: 100%;
+      object-fit: cover;
+    }
+    .buttons {
+      position: absolute;
+      top: 45%;
+      left: 5%;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .buttons button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff5;
+      color: #fff;
+      border: none;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    .dots {
+      position: absolute;
+      bottom: 10px;
+      color: #fff;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    .dots li {
+      list-style: none;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 20px;
+      transition: 1s;
+    }
+    .dots li.active {
+      width: 30px;
+    }
+    @media screen and (max-width: 768px) {
+      .slider {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider">
+    <div class="list">
+      <div class="item">
+        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2026/3/22/f6gzzedsqtav9jxz54vq/f1-speeds_2025-italian-grand-prix" alt="">
+      </div>
+      <div class="item">
+        <img src="https://ichef.bbci.co.uk/ace/standard/2560/cpsprodpb/b591/live/cf411620-13df-11f1-b22e-e5eaf1a00c5b.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="https://www.williamsf1.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffnx611yr%2Fproductionv2%2F99f42da691f21eceb1781e2da10920a2b92b4116-5185x3461.jpg%3Frect%3D0%2C544%2C5185%2C2917%26w%3D1920%26h%3D1080%26auto%3Dformat&w=3840&q=75&dpl=dpl_3WnnodK9JAr7PnKhEBd88sWdcgG5" alt="">
+      </div>
+      <div class="item">
+        <img src="https://www.goodwood.com/globalassets/.road--racing/f1/2026/02-february/best-f1-cars-of-all-time-update/best-f1-cars-of-all-time-rb19.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="https://storage.ghost.io/c/dd/af/ddafbd99-2ccd-468c-b622-4b3cccf80b49/content/images/size/w1200/2026/03/XPB_1399878_HiRes.jpg" alt="">
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button id="prev"><</button>
+      <button id="next">></button>
+    </div>
+    <ul class="dots">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  
+  <script>
+    let list = document.querySelector('.slider .list');
+    let items = document.querySelectorAll('.slider .list .item');
+    let dots = document.querySelectorAll('.slider .dots li');
+    let prev = document.getElementById('prev');
+    let next = document.getElementById('next');
+
+    let active = 0;
+    let lengthItems = items.length - 1;
+    
+    next.onclick = function(){
+      if(active + 1 > lengthItems){
+        active = 0;
+      }
+      else{
+        active = active + 1;
+      }
+      reloadSlider();
+    }
+    prev.onclick = function(){
+      if(active - 1 < 0){
+        active = lengthItems;
+      }
+      else{
+        active = active - 1;
+      }
+      reloadSlider();
+    }
+    let refreshSlider = setInterval(()=> {next.click()}, 5000);
+    function reloadSlider(){
+      let checkLeft = items[active].offsetLeft;
+      list.style.left = -checkLeft + 'px';
+
+      let lastActiveDot = document.querySelector('.slider .dots li.active');
+      lastActiveDot.classList.remove('active');
+      dots[active].classList.add('active');
+      clearInterval(refreshSlider);
+      refreshSlider = setInterval(()=> {next.click()}, 5000);
+
+    }
+    dots.forEach((li, key) => {
+      li.addEventListener('click', function(){
+        active = key;
+        reloadSlider();
+      })
+    })
+  </script>
+</body>
+</html>
