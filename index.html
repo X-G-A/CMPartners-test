@@ -179,6 +179,12 @@
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(0) scale(1.05); }
+      100% { transform: translateY(0) scale(1); }
     }
     .quote-btn:hover {
       background: #a71d1d;
