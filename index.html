@@ -208,10 +208,39 @@
         height: 400px;
       }
     }
-    .container {
-      min-height: 2000px;
+    .section {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* white section */
+    .white {
       background: white;
-      padding: 50px;
+      color: black;
+    }
+    /* black section */
+    .black {
+      background: black;
+      color: white;
+    }
+    /* image section */
+    .image {
+      background: url("section_bg-img.jpg") center/cover no-repeat;
+      color: white;
+      position: relative;
+    }
+    /* optional dark overlay */
+    .image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .image h1 {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
@@ -275,10 +304,17 @@
   </div>
 
   <!--Contents-->
-  <div class="container">
-    <h1>About C&M Partners</h1>
-    <p>Test scrolling content.</p>
-  </div>
+  <section class="section white">
+    <h1>hello</h1>
+  </section>
+
+  <section class="section black">
+    <h1>test</h1>
+  </section>
+
+  <section class="section image">
+    <h1>image section</h1>
+  </section>
   
   <script>
     let list = document.querySelector('.slider .list');
