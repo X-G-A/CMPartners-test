@@ -6,8 +6,15 @@
   <title>TEST</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
       margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
       font-family: monospace;
     }
     .navbar {
@@ -16,7 +23,7 @@
       left: 0;
       width: 100%;
       box-sizing: border-box;
-      padding: 25px 80px;
+      padding: 25px clamp(20px, 5vw, 80px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -68,7 +75,7 @@
     }
     .slider {
       width: 1300px;
-      max-width: 100vw;
+      max-width: 100%;
       height: 700px;
       margin: auto;
       position: relative;
@@ -96,7 +103,7 @@
     }
     .list img{
       width: 1300px;
-      max-width: 100vw;
+      max-width: 100%;
       height: 100%;
       object-fit: cover;
     }
@@ -242,6 +249,133 @@
       position: relative;
       z-index: 1;
     }
+    .footer-section {
+      width: 100%;
+      min-height: 40vh;
+      background: #0b0b0b;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px clamp(20px, 5vw, 80px);
+      box-sizing: border-box;
+      flex-wrap: wrap;
+    }
+    /* each column */
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+      padding: 20px;
+    }
+    /* logo column */
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo-box img {
+      height: 60px;
+    }
+    .logo-box h2 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+    /* text styling */
+    .footer-col h3 {
+      margin-bottom: 15px;
+    }
+    .footer-col p {
+      margin: 8px 0;
+      color: #bbb;
+    }
+    /* social links */
+    .socials {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .socials a {
+      color: #bbb;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .socials a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+    .project-tours {
+      background: url("section_bg-img.jpg") center/cover no-repeat;
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    /* dark overlay */
+    .project-tours::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .tour-container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: auto;
+    }
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #ddd;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    /* video box */
+    .video-box {
+      width: 100%;
+      height: 400px;
+      margin: 30px 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .video-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    /* quote */
+    .quote {
+      margin-bottom: 50px;
+    }
+    .quote p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #f1f1f1;
+    }
+    .quote span {
+      display: block;
+      margin-top: 10px;
+      color: #bbb;
+    }
+    /* button */
+    .projects-btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: #c62828;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    .projects-btn:hover {
+      background: #a71d1d;
+      transform: translateY(-3px);
+    }
   </style>
 </head>
 <body>
@@ -312,9 +446,74 @@
     <h1>test</h1>
   </section>
 
-  <section class="section image">
-    <h1>image section</h1>
+  <section class="section image project-tours">
+  <div class="tour-container">
+    <h2 class="title">Project Tours</h2>
+
+    <p class="subtitle">
+      Video walkthrough of completed projects with client interviews and feedback.
+    </p>
+
+    <!-- Video block (placeholder for now) -->
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Project Tour"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="quote">
+      <p>"They delivered beyond expectations. The quality and attention to detail was outstanding."</p>
+      <span>- Client Name</span>
+    </div>
+
+    <!-- repeat second if needed -->
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Project Tour"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="quote">
+      <p>"Professional team, smooth process, and excellent results."</p>
+      <span>- Client Name</span>
+    </div>
+
+    <a href="#" class="projects-btn">See more projects</a>
+  </div>
   </section>
+
+  <footer class="footer-section">
+  <div class="footer-col">
+    <div class="logo-box">
+      <img src="logo.png" alt="Logo">
+      <h2>C&M PARTNERS</h2>
+    </div>
+  </div>
+
+  <div class="footer-col">
+    <h3>Contact</h3>
+    <p>📞 +63 900 000 0000</p>
+    <p>📧 info@cmpartners.com</p>
+    <p>📍 Quezon City, Philippines</p>
+  </div>
+
+  <div class="footer-col">
+    <h3>Follow Us</h3>
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  </footer>
   
   <script>
     let list = document.querySelector('.slider .list');
