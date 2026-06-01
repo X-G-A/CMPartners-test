@@ -10,6 +10,55 @@
       margin: 0;
       font-family: monospace;
     }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 25px 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      transition: 0.4s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(15, 15, 15, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .nav-left img {
+      height: 50px;
+      width: auto;
+    }
+    .nav-left span {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .nav-links a:hover {
+      opacity: 0.7;
+    }
     .slider {
       width: 1300px;
       max-width: 100vw;
@@ -18,6 +67,17 @@
       position: relative;
       overflow: hidden;
     }
+    .slider::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 30%, rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.50) 100%);
+    }
     .list {
       position: absolute;
       top: 0;
@@ -25,7 +85,7 @@
       height: 100%;
       display: flex;
       width: max-content;
-      transition: 1s;
+      transition: 1.5s;
     }
     .list img{
       width: 1300px;
@@ -69,10 +129,42 @@
       background-color: #fff;
       margin: 20px;
       border-radius: 20px;
-      transition: 1s;
+      transition: 1.5s;
     }
     .dots li.active {
       width: 30px;
+    }
+    .slider-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      color: white;
+      text-align: center;
+      width: 80%;
+    }
+    .slider-text h1 {
+      margin: 0;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .slider-text p {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+    .fade-text {
+      animation: fadeText 2.5s ease;
+    }
+    @keyframes fadeText {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -40%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
     }
     @media screen and (max-width: 768px) {
       .slider {
@@ -82,24 +174,45 @@
   </style>
 </head>
 <body>
+  <!--Navbar-->
+  <nav class="navbar">
+  <div class="nav-left">
+    <img src="logo.png" alt="Logo">
+    <span>COMPANY NAME</span>
+  </div>
 
-  <div class="slider">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  </nav>
+
+  <!--Slider-->
+  <div class="slider" id="heroSlider">
     <div class="list">
       <div class="item">
-        <img src="https://img.redbull.com/images/c_limit,w_1500,h_1000/f_auto,q_auto/redbullcom/2026/3/22/f6gzzedsqtav9jxz54vq/f1-speeds_2025-italian-grand-prix" alt="">
+        <img src="slider_img_1.jpg" alt="">
       </div>
       <div class="item">
-        <img src="https://ichef.bbci.co.uk/ace/standard/2560/cpsprodpb/b591/live/cf411620-13df-11f1-b22e-e5eaf1a00c5b.jpg" alt="">
+        <img src="slider_img_2.jpg" alt="">
       </div>
       <div class="item">
-        <img src="https://www.williamsf1.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffnx611yr%2Fproductionv2%2F99f42da691f21eceb1781e2da10920a2b92b4116-5185x3461.jpg%3Frect%3D0%2C544%2C5185%2C2917%26w%3D1920%26h%3D1080%26auto%3Dformat&w=3840&q=75&dpl=dpl_3WnnodK9JAr7PnKhEBd88sWdcgG5" alt="">
+        <img src="slider_img_3.jpg" alt="">
       </div>
       <div class="item">
-        <img src="https://www.goodwood.com/globalassets/.road--racing/f1/2026/02-february/best-f1-cars-of-all-time-update/best-f1-cars-of-all-time-rb19.jpg" alt="">
+        <img src="slider_img_4.jpg" alt="">
       </div>
       <div class="item">
-        <img src="https://storage.ghost.io/c/dd/af/ddafbd99-2ccd-468c-b622-4b3cccf80b49/content/images/size/w1200/2026/03/XPB_1399878_HiRes.jpg" alt="">
+        <img src="slider_img_5.jpg" alt="">
       </div>
+    </div>
+
+    <div class="slider-text">
+      <h1 id="slideTitle">C&M PARTNERS</h1>
+      <p id="slideDesc">Dream, Design, Develop</p>
     </div>
     
     <div class="buttons">
@@ -114,6 +227,11 @@
       <li></li>
     </ul>
   </div>
+
+  <!--Contents-->
+  <div class="container">
+
+  </div>
   
   <script>
     let list = document.querySelector('.slider .list');
@@ -121,6 +239,8 @@
     let dots = document.querySelectorAll('.slider .dots li');
     let prev = document.getElementById('prev');
     let next = document.getElementById('next');
+    let slideTitle = document.getElementById('slideTitle');
+    let slideDesc = document.getElementById('slideDesc');
 
     let active = 0;
     let lengthItems = items.length - 1;
@@ -151,6 +271,11 @@
       let lastActiveDot = document.querySelector('.slider .dots li.active');
       lastActiveDot.classList.remove('active');
       dots[active].classList.add('active');
+      slideTitle.textContent = slideContent[active].title;
+      slideDesc.textContent = slideContent[active].desc;
+      document.querySelector('.slider-text').classList.remove('fade-text');
+      void document.querySelector('.slider-text').offsetWidth;
+      document.querySelector('.slider-text').classList.add('fade-text');
       clearInterval(refreshSlider);
       refreshSlider = setInterval(()=> {next.click()}, 5000);
 
@@ -161,6 +286,40 @@
         reloadSlider();
       })
     })
+    const navbar = document.querySelector('.navbar');
+    const heroSlider = document.getElementById('heroSlider');
+    window.addEventListener('scroll', () => {
+      const sliderHeight = heroSlider.offsetHeight;
+      if(window.scrollY > sliderHeight - 100){
+        navbar.classList.add('scrolled');
+      }
+      else{
+        navbar.classList.remove('scrolled');
+      }
+    }); 
+
+    const slideContent = [
+    {
+      title: "C&M PARTNERS",
+      desc: "Dream, Design, Develop"
+    },
+    {
+      title: "DREAM",
+      desc: "Turn your dream home into reality."
+    },
+    {
+      title: "DESIGN",
+      desc: "Design your ideas."
+    },
+    {
+      title: "DEVELOP",
+      desc: "Develop your perspective."
+    },
+    {
+      title: "A New Foundation",
+      desc: "What you build today, will shape tomorrow."
+    }
+    ];
   </script>
 </body>
 </html>
