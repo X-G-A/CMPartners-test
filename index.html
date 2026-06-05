@@ -23,7 +23,7 @@
       left: 0;
       width: 100%;
       box-sizing: border-box;
-      padding: 25px clamp(20px, 5vw, 80px);
+      padding: 18px clamp(20px, 5vw, 80px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -34,6 +34,7 @@
       background: rgba(255, 255, 255, 0.97); 
       backdrop-filter: blur(10px);
       box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      transform: translateY(0);
     }
     .nav-left {
       display: flex;
@@ -54,6 +55,26 @@
     .navbar.scrolled .nav-left span {
       color: black;
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-quote-btn {
+      background: #c62828;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      padding: 10px 18px;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+    .nav-quote-btn:hover {
+      background: #a71d1d;
+      transform: translateY(-2px);
+    }
     .nav-links {
       display: flex;
       gap: 40px;
@@ -65,14 +86,34 @@
       color: black;
     }
     .nav-links a {
+      position: relative;
       color: white;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 500;
-      transition: color 0.7s ease, opacity 0.5s ease;
+      transition: color 0.7s ease;
     }
-    .nav-links a:hover {
-      opacity: 0.7;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #c62828;
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .nav-links a.active {
+      color: #c62828;
+    }
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    .navbar.scrolled .nav-links a.active {
+      color: #c62828;
     }
     .slider {
       width: 1300px;
@@ -517,13 +558,20 @@
     <span>C&M PARTNERS</span>
   </a>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Projects</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact Us</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpnf6Pe9qTo3g2xcsqYXz83BjDITl93Fq84-9Ezg6STn22pg/viewform"
+      target="_blank"
+      class="nav-quote-btn">
+      GET FREE QUOTE
+    </a>
+  </div>
   </nav>
 
   <!--Slider-->
@@ -804,7 +852,7 @@
 
     window.addEventListener('scroll', () => {
       const sliderHeight = heroSlider.offsetHeight;
-      if(window.scrollY > sliderHeight - 100){
+      if(window.scrollY > 80){
         navbar.classList.add('scrolled');
       }
       else{
