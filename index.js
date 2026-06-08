@@ -1,3 +1,5 @@
+let active = 0;
+
 let list = document.querySelector('.slider .list');
 let items = document.querySelectorAll('.slider .list .item');
 let dots = document.querySelectorAll('.slider .dots li');
@@ -7,7 +9,7 @@ let slideTitle = document.getElementById('slideTitle');
 let slideDesc = document.getElementById('slideDesc');
 let quoteBtn = document.getElementById('quoteBtn');
 
-let active = 0;
+
 let lengthItems = items.length - 1;
 
 next.onclick = function(){
