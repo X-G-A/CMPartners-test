@@ -177,6 +177,7 @@ body {
     border: none;
     font-family: monospace;
     font-weight: bold;
+    cursor: pointer;
 }
 .dots {
     position: absolute;
@@ -197,6 +198,7 @@ body {
     margin: 20px;
     border-radius: 20px;
     transition: 1.5s;
+    cursor: pointer;
 }
 .dots li.active {
     width: 30px;
