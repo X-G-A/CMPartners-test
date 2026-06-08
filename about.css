@@ -4,7 +4,10 @@
     position: relative;
     color: white;
     text-align: center;
-    padding: 100px 20px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* dark overlay */
 .about-title::before {
@@ -19,16 +22,16 @@
     max-width: 900px;
     margin: auto;
     text-align: center;
-    
+    padding-top: 60px;
 }
 .title {
     margin: 0;
     font-size: 4rem;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 /* ABOUT US */
-/* WHITE SECTION */
 .white {
     background: white;
     color: black;
@@ -61,4 +64,44 @@
     line-height: 1.8;
     color: #555;
     text-align: justify;
+}
+
+/* OUR TEAM */
+.black {
+    background: #111;
+    color: white;
+    padding: 100px clamp(20px, 5vw, 80px);
+}
+.team-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px clamp(20px, 5vw, 80px) 100px;
+    text-align: center;
+}
+.team-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.member {
+    width: 250px;
+}
+.member img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+.member h3 {
+    margin: 10px 0 5px;
+}
+.member p {
+    color: #666;
 }
