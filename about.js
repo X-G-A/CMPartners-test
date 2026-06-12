@@ -56,3 +56,49 @@ nextBtn.addEventListener("click", () => {
     current = (current + 1) % historyData.length;
     updateHistory("next");
 });
+
+/* ========================================
+   MISSION / VISION / RECOGNITIONS
+======================================== */
+
+const mvData = {
+    mission: {
+        image: "mission.png",
+        text: "To provide high-quality design and build services through integrity, innovation, and commitment to excellence."
+    },
+
+    vision: {
+        image: "vision.png",
+        text: "To become one of the most trusted construction and design-build companies, creating structures that stand the test of time."
+    },
+
+    recognitions: {
+        image: "slider_img_3.jpg",
+        text: "Recognized for quality workmanship, client satisfaction, and delivering projects with professionalism and reliability."
+    }
+};
+
+const mvButtons = document.querySelectorAll(".mv-btn");
+const mvImage = document.getElementById("mvImage");
+const mvText = document.getElementById("mvText");
+
+mvButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const tab = button.dataset.tab;
+        // active state
+        mvButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+        button.classList.add("active");
+        // fade out
+        mvImage.style.opacity = "0";
+        mvText.style.opacity = "0";
+        setTimeout(() => {
+            mvImage.src = mvData[tab].image;
+            mvText.textContent = mvData[tab].text;
+            // fade back in
+            mvImage.style.opacity = "1";
+            mvText.style.opacity = "1";
+        }, 300);
+    });
+});
