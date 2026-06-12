@@ -1,0 +1,180 @@
+/* Projects Main Section */
+.projects-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    position: relative;
+}
+
+/* Center Circle */
+.center-circle {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.center-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.center-circle img:hover {
+    transform: scale(1.05);
+}
+
+/* Left Categories */
+.categories-left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.categories-left .category-btn:nth-child(1) {
+    margin-top: 20px;
+}
+
+.categories-left .category-btn:nth-child(3) {
+    margin-bottom: 20px;
+}
+
+/* Right Categories */
+.categories-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-end;
+}
+
+.categories-right .category-btn:nth-child(1) {
+    margin-top: 20px;
+}
+
+.categories-right .category-btn:nth-child(3) {
+    margin-bottom: 20px;
+}
+
+/* Category Buttons */
+.category-btn {
+    background: none;
+    border: 2px solid #c62828;
+    color: #333;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.category-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #c62828;
+    z-index: -1;
+    transition: left 0.3s ease;
+}
+
+.category-btn:hover {
+    color: white;
+    border-color: #c62828;
+}
+
+.category-btn:hover::before {
+    left: 0;
+}
+
+.category-btn.active {
+    background: #c62828;
+    color: white;
+}
+
+/* Projects Grid - 4 Columns */
+.projects-grid-4col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 80px);
+}
+
+.project-card {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.project-card.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    padding: 20px;
+}
+
+.project-card:hover img {
+    transform: scale(1.08);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay h3 {
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.project-overlay p {
+    margin: 0;
+    color: #ddd;
+    font-size: 0.9rem;
+}
