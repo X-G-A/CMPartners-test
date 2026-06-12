@@ -1,36 +1,3 @@
-/* TITLE */
-.about-title {
-    background: url("section_bg-img.jpg") center/cover no-repeat;
-    position: relative;
-    color: white;
-    text-align: center;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-/* dark overlay */
-.about-title::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-}
-.title-container {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    padding-top: 60px;
-}
-.title {
-    margin: 0;
-    font-size: 4rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
 /* ABOUT US */
 .white {
     background: white;
@@ -235,4 +202,90 @@
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
+}
+
+.mv-section{
+    max-width:1200px;
+    margin:auto;
+    padding:120px 40px;
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:60px;
+    align-items:center;
+}
+/* LEFT SIDE */
+.mv-nav{
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+}
+.mv-btn{
+    position: relative;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #777;
+    transition: .3s ease;
+    padding: 0;
+}
+/* underline animation */
+.mv-btn::after{
+    content: "";
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #c62828;
+
+    transition: width .3s ease;
+}
+.mv-btn:hover{
+    color: #c62828;
+}
+.mv-btn:hover::after{
+    width: 50%;
+}
+.mv-btn.active{
+    color:#c62828;
+    transform: translateX(8px);
+}
+.mv-btn.active::after{
+    width: 50%;
+}
+/* RIGHT SIDE */
+.image-container{
+    position:relative;
+}
+.image-container img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:12px;
+    display:block;
+}
+#mvImage{
+    transition: opacity .4s ease;
+}
+.top-left-text{
+    transition: opacity .4s ease;
+}
+/* TEXT OVER IMAGE */
+.top-left-text{
+    position:absolute;
+    top:20px;
+    left:10px;
+    max-width:450px;
+    padding:25px 30px;
+}
+.top-left-text p{
+    margin:0;
+    line-height:1.8;
+    color: #000000;
 }
