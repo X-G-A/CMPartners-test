@@ -131,6 +131,12 @@
     background: white;
     color: black;
 }
+.about-link{
+    text-decoration: none !important; /* Forces removal of text decoration */
+    border: black;
+    color: inherit; /* Prevents the link from turning default blue/purple */
+    display: block; /* Ensures the link wraps the card layout perfectly */
+}
 .about-container {
     max-width: 1200px;
     width: 100%;
@@ -200,6 +206,12 @@
     background: #111;
     color: white;
     padding: 100px clamp(20px, 5vw, 80px);
+}
+.project-link{
+    text-decoration: none !important; /* Forces removal of text decoration */
+    border: black;
+    color: inherit; /* Prevents the link from turning default blue/purple */
+    display: block; /* Ensures the link wraps the card layout perfectly */
 }
 .services-grid {
     display: grid;
