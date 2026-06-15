@@ -375,20 +375,26 @@ body {
     min-height: 40vh;
     background: #0b0b0b;
     color: white;
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+
     padding: 60px clamp(20px, 5vw, 80px);
-    box-sizing: border-box;
-    flex-wrap: wrap;
+    gap: 80px; /* space between logo and footer-holder */
+}
+
+.footer-holder {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px; /* space between Contact and Follow Us */
 }
 
 .footer-col {
-    flex: 1;
-    min-width: 250px;
+    flex: 0 0 auto;
+    min-width: auto;
     padding: 20px;
 }
-
 .logo-box {
     display: flex;
     align-items: center;
