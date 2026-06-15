@@ -73,7 +73,7 @@ const mvData = {
     },
 
     recognitions: {
-        image: "slider_img_3.jpg",
+        image: "recognition.png",
         text: "Recognized for quality workmanship, client satisfaction, and delivering projects with professionalism and reliability."
     }
 };
