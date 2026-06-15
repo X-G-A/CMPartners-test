@@ -1,95 +1,166 @@
-/* Contact Page Styles */
+/* =========================
+   CONTACT PAGE
+========================= */
 
-.contact-wrapper {
-    max-width: 700px;
+.contact-container {
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
+    padding: 80px 0;
+}
+
+.contact-header {
     text-align: center;
+    margin-bottom: 70px;
 }
 
 .contact-header h2 {
-    font-size: 2.2em;
-    color: #333;
+    font-size: 3rem;
+    color: #222;
     margin-bottom: 15px;
 }
 
 .contact-header p {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 50px;
-    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
-.contact-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* GRID */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    align-items: stretch;
 }
 
-.contact-item {
+.contact-card-link {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card {
+    height: 320px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px 25px;
+
+    text-align: center;
+    border: 1px solid #ececec;
+
+    transition: all 0.35s ease;
+    cursor: pointer;
 }
 
-.contact-item h4 {
-    font-size: 1.1em;
+.contact-card img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
     color: #c62828;
-    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+
+    /* makes all headings occupy same space */
+    min-height: 32px;
 }
 
-.contact-item p {
-    font-size: 1em;
-    color: #666;
+.contact-card p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.8;
+    color: #666;
+
+    /* pushes content into aligned position */
+    flex: 1;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
 }
 
-.contact-item a {
-    color: #c62828;
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-color: #c62828;
+}
+
+
+.contact-card a {
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    color: inherit;
+}
+.contact-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.contact-item a:hover {
-    opacity: 0.8;
+.contact-card-link:hover {
+    text-decoration: none;
 }
 
-/* CTA Section */
-.quote-btn-large {
+/* CTA */
+
+.contact-cta {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.quote-btn {
     display: inline-block;
-    padding: 16px 50px;
-    background-color: #c62828;
+    padding: 18px 55px;
+    background: #c62828;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.1em;
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    border: 2px solid #c62828;
-    margin-top: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.quote-btn-large:hover {
-    background-color: #a01f1f;
-    border-color: #a01f1f;
+.quote-btn:hover {
+    background: #a91f1f;
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(198, 40, 40, 0.25);
+    box-shadow: 0 15px 35px rgba(198,40,40,0.3);
 }
 
-/* Responsive */
+/* TABLET */
+
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
 @media (max-width: 768px) {
-    .contact-wrapper {
-        max-width: 100%;
-        padding: 0 20px;
+
+    .contact-container {
+        width: 95%;
     }
 
     .contact-header h2 {
-        font-size: 1.8em;
+        font-size: 2.3rem;
     }
 
-    .contact-center {
-        gap: 20px;
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        padding: 35px 20px;
     }
 }
