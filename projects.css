@@ -117,6 +117,13 @@
     margin-bottom: 120wpx;
 }
 
+.project-link {
+    text-decoration: none !important; /* Forces removal of text decoration */
+    border: black;
+    color: inherit; /* Prevents the link from turning default blue/purple */
+    display: block; /* Ensures the link wraps the card layout perfectly */
+}
+
 .project-card {
     position: relative;
     aspect-ratio: 1;
@@ -124,6 +131,8 @@
     border-radius: 10px;
     cursor: pointer;
     transition: opacity 0.4s ease, transform 0.4s ease;
+    border: 1px solid #000000; 
+    box-sizing: border-box;
 }
 
 .project-card.hidden {
