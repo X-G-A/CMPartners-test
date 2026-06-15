@@ -114,6 +114,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 clamp(20px, 5vw, 80px);
+    margin-bottom: 120wpx;
 }
 
 .project-card {
