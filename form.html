@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C&M PARTNERS | Contact Us © 2026</title>
+
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="form.css">
+  <link rel="stylesheet" href="contact.css">
+  
+  <style>
+      .form-wrapper {
+          background-color: #ffffff;
+          padding: 40px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          width: 100%;
+          max-width: 500px;
+          margin: 40px auto 0 auto;
+      }
+      .form-wrapper h3 {
+          text-align: center;
+          margin-bottom: 25px;
+          color: #333;
+          font-size: 22px;
+      }
+      .form-group {
+          margin-bottom: 20px;
+      }
+      .form-group label {
+          display: block;
+          margin-bottom: 6px;
+          color: #555;
+          font-size: 14px;
+          font-weight: bold;
+      }
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group input[type="datetime-local"],
+      .form-group select,
+      .form-group textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          font-size: 15px;
+          font-family: inherit;
+      }
+      .form-group textarea {
+          resize: vertical;
+          height: 120px;
+      }
+      
+      .submit-form-btn {
+          width: 100%;
+          border: none;
+          background: #c62828;
+          color: white;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: 0.3s ease;
+          padding: 12px 18px;
+          font-size: 0.9rem;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          font-family: monospace;
+      }
+      .submit-form-btn:hover {
+          background: #a71d1d;
+          transform: translateY(-2px);
+      }
+  </style>
+</head>
+<body>
+  <!--Navbar-->
+  <nav class="navbar">
+  <a href="index.html" class="nav-left">
+    <img src="logo.png" alt="Logo">
+    <span>C&M PARTNERS</span>
+  </a>
+
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <a href="https://google.com" target="_blank" class="nav-quote-btn">
+      GET FREE QUOTE
+    </a>
+  </div>
+  </nav>
+
+  <section class="section about-title">
+    <div class="title-container">
+        <h2 class="title">CONTACT US</h2>
+    </div>
+  </section>
+
+<section class="section white">
+    <div class="contact-container">
+
+        <div class="contact-header">
+            <h2>Get In Touch</h2>
+            <p>
+                Have a project in mind? Our team is ready to discuss your construction
+                and development needs.
+            </p>
+        </div>
+
+        <div class="form-wrapper">
+            <h3>Send Us a Message</h3>
+            
+            <form id="contactForm" method="POST">
+                
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="Full Name" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="Email" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="Contact Number" required autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="services">Services</label>
+                    <select id="services" name="Requested Service" required>
+                        <option value="" disabled selected>-- Select a Service --</option>
+                        <option value="Residential Construction">Residential Construction</option>
+                        <option value="Commercial Development">Commercial Development</option>
+                        <option value="Renovation & Remodeling">Renovation & Remodeling</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="datetime">Preferred Time and Date (Optional)</label>
+                    <input type="datetime-local" id="datetime" name="Preferred Appointment Window">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message (Optional)</label>
+                    <textarea id="message" name="Message Layout"></textarea>
+                </div>
+
+                <button type="submit" class="submit-form-btn" id="submitBtn">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+  <!--FOOTER-->
+  <footer class="footer-section">
+  <div class="footer-col">
+    <div class="logo-box">
+      <img src="logo.png" alt="Logo">
+      <h2>C&M PARTNERS</h2>
+    </div>
+  </div>
+
+  <div class="footer-holder">
+    <div class="footer-col">
+        <h3>Contact</h3>
+        <p><a href="tel:+639171140601">+63 917 114 0601</a></p>
+        <p><a href="tel:85279542">8527-9542</a></p>
+        <p><a href="mailto:admin@cmpartners.ltd">admin@cmpartners.ltd</a></p>
+        <p><a href="https://goo.gl">Quezon City, Philippines</a></p>
+    </div>
+
+  <div class="footer-col">
+    <h3>Follow Us</h3>
+    <div class="socials">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+  </div>
+  
+  </footer>
+
+  <script src="global.js"></script>
+
+  <!-- JAVASCRIPT SYSTEM WITH CORRECT AJAX ROUTING -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const btn = document.getElementById('submitBtn');
+        btn.innerText = "Sending...";
+        btn.disabled = true;
+
+        const formData = new FormData(this);
+        const object = {};
+        formData.forEach((value, key) => object[key] = value);
+        const json = JSON.stringify(object);
+
+        /* 
+          FIXED: Changed endpoint url to FormSubmit's native JSON AJAX API 
+          and pointed it to your direct email string for system authorization.
+        */
+        fetch("https://formsubmit.co", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success === "true" || data.success === true) {
+                // Skips all error layouts and goes straight to your thank you view
+                window.location.href = "success.html"; 
+            } else {
+                alert("Submission failed. Form endpoint must be activated first.");
+                btn.innerText = "Send Message";
+                btn.disabled = false;
+            }
+        })
+        .catch(error => {
+            alert("Connection error. Please verify your email activation link status.");
+            btn.innerText = "Send Message";
+            btn.disabled = false;
+        });
+    });
+  </script>
+</body>
+</html>
