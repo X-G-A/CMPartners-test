@@ -74,7 +74,7 @@ const mvData = {
 
     recognitions: {
         image: "recognition.png",
-        text: "Recognized for quality workmanship, client satisfaction, and delivering projects with professionalism and reliability."
+        text: "15+ Years Experience <br> Trusted by clients"
     }
 };
 
@@ -95,8 +95,8 @@ mvButtons.forEach(button => {
         mvText.style.opacity = "0";
         setTimeout(() => {
             mvImage.src = mvData[tab].image;
-            mvText.textContent = mvData[tab].text;
-            // fade back in
+            mvText.innerHTML = mvData[tab].text; // Changed from textContent to innerHTML
+            
             mvImage.style.opacity = "1";
             mvText.style.opacity = "1";
         }, 300);
