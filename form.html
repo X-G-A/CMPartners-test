@@ -116,24 +116,31 @@
         <div class="form-wrapper">
             <h3>Send Us a Message</h3>
             
-            <form id="contactForm" method="POST">
+            <form id="contactForm" action="https://formsubmit.co/yaboize355@gmail.com" method="POST">
                 
+                <!-- Hidden Inputs -->
+                <!-- Honeypot spam protection -->
                 <input type="text" name="_honey" style="display:none">
+                
+                <!-- Disabled captcha for testing -->
                 <input type="hidden" name="_captcha" value="false">
 
+                <!-- Send to Thank You Page -->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/success.html">
+
                 <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="Full Name" required autocomplete="name">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" name="Email" required autocomplete="email">
+                    <input type="email" id="email" name="email" required autocomplete="email">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Contact Number</label>
-                    <input type="tel" id="phone" name="Contact Number" required autocomplete="tel">
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel">
                 </div>
 
                 <div class="form-group">
@@ -194,50 +201,5 @@
   </footer>
 
   <script src="global.js"></script>
-
-  <!-- JAVASCRIPT SYSTEM WITH CORRECT AJAX ROUTING -->
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault(); 
-        
-        const btn = document.getElementById('submitBtn');
-        btn.innerText = "Sending...";
-        btn.disabled = true;
-
-        const formData = new FormData(this);
-        const object = {};
-        formData.forEach((value, key) => object[key] = value);
-        const json = JSON.stringify(object);
-
-        /* 
-          FIXED: Changed endpoint url to FormSubmit's native JSON AJAX API 
-          and pointed it to your direct email string for system authorization.
-        */
-        fetch("https://formsubmit.co", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success === "true" || data.success === true) {
-                // Skips all error layouts and goes straight to your thank you view
-                window.location.href = "success.html"; 
-            } else {
-                alert("Submission failed. Form endpoint must be activated first.");
-                btn.innerText = "Send Message";
-                btn.disabled = false;
-            }
-        })
-        .catch(error => {
-            alert("Connection error. Please verify your email activation link status.");
-            btn.innerText = "Send Message";
-            btn.disabled = false;
-        });
-    });
-  </script>
 </body>
 </html>
