@@ -29,16 +29,19 @@ const projectsData = {
 document.addEventListener("DOMContentLoaded", () => {
 
     const buttons = document.querySelectorAll(".category-btn");
-    const projectCards = document.querySelectorAll(".project-card");
+
+    // IMPORTANT:
+    // Select the links because they contain data-category
+    const projectLinks = document.querySelectorAll(".project-link");
+
     const mainImage = document.getElementById("mainProjectImg");
 
-    // Save whatever image is initially in the HTML
+    // Store the original image from HTML
     const defaultImage = mainImage.src;
 
-    // Show all projects on page load
-    projectCards.forEach(card => {
-        card.classList.remove("hidden");
-        card.classList.add("show");
+    // Show all projects on load
+    projectLinks.forEach(link => {
+        link.style.display = "block";
     });
 
     buttons.forEach(button => {
@@ -51,13 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
             // Remove active state from all buttons
             buttons.forEach(btn => btn.classList.remove("active"));
 
-            // If clicked button was already active,
-            // reset everything to default
+            // If clicking active button again, reset everything
             if (wasActive) {
 
-                projectCards.forEach(card => {
-                    card.classList.remove("hidden");
-                    card.classList.add("show");
+                projectLinks.forEach(link => {
+                    link.style.display = "block";
                 });
 
                 mainImage.style.opacity = "0";
@@ -84,15 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 200);
             }
 
-            // Filter project cards
-            projectCards.forEach(card => {
+            // Filter projects
+            projectLinks.forEach(link => {
 
-                if (card.dataset.category === category) {
-                    card.classList.remove("hidden");
-                    card.classList.add("show");
+                if (link.dataset.category === category) {
+                    link.style.display = "block";
                 } else {
-                    card.classList.remove("show");
-                    card.classList.add("hidden");
+                    link.style.display = "none";
                 }
 
             });
