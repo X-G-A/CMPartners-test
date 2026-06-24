@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Handle navigation links
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
+    const navLinks = document.querySelectorAll('a[href]');
 
     navLinks.forEach(link => {
         // Skip external links, current page, and anchor links
@@ -165,4 +165,53 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+});
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navRight = document.getElementById("navRight");
+
+    if (menuToggle && navRight) {
+
+        menuToggle.addEventListener("click", () => {
+
+            navRight.classList.toggle("show");
+
+            // Change icon
+            if (navRight.classList.contains("show")) {
+                menuToggle.innerHTML = "✕";
+            } else {
+                menuToggle.innerHTML = "☰";
+            }
+
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navRight.classList.remove("show");
+                menuToggle.innerHTML = "☰";
+
+            });
+
+        });
+
+        // Close menu if screen resized back to desktop
+        window.addEventListener("resize", () => {
+
+            if (window.innerWidth > 768) {
+                navRight.classList.remove("show");
+                menuToggle.innerHTML = "☰";
+            }
+
+        });
+
+    }
+
 });
