@@ -1,177 +1,119 @@
-/* SLIDER */
-.slider {
-    width: 1300px;
-    max-width: 100%;
-    height: 700px;
-    margin: auto;
+/* ==================================================
+   HERO VIDEO
+================================================== */
+
+.hero-video {
     position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
     overflow: hidden;
-}
-.slider::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 30%, rgba(0, 0, 0, 0.20) 60%, rgba(0, 0, 0, 0.50) 100%);
-}
-.list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+
     display: flex;
-    width: max-content;
-    transition: 1.5s;
-}
-.list img{
-    width: 1300px;
-    max-width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.buttons {
-    position: absolute;
-    top: 45%;
-    left: 5%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-}
-.buttons button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #fff5;
-    color: #fff;
-    border: none;
-    font-family: monospace;
-    font-weight: bold;
-    cursor: pointer;
-}
-.dots {
-    position: absolute;
-    bottom: 10px;
-    color: #fff;
-    left: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    align-items: center;
     justify-content: center;
 }
-.dots li {
-    list-style: none;
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 20px;
-    transition: 1.5s;
-    cursor: pointer;
-}
-.dots li.active {
-    width: 30px;
-}
-.slider-text {
+
+.hero-bg-video {
     position: absolute;
     top: 50%;
     left: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
     transform: translate(-50%, -50%);
-    z-index: 4;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.75) 0%,
+            rgba(0,0,0,.45) 30%,
+            rgba(0,0,0,.20) 60%,
+            rgba(0,0,0,.55) 100%
+        );
+
+    z-index: 2;
+}
+
+.slider-text {
+    position: relative;
+    z-index: 3;
+
     color: white;
     text-align: center;
-    width: 80%;
-}
-/* Tablet */
-@media (max-width: 1500px) {
-    .slider-text h1 {
-    margin: 0;
-    font-size: 4rem;
-    font-weight: bold;
-}
-.slider-text p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
+
+    width: min(90%, 900px);
+    padding: 20px;
 }
 
-/* Tablet */
-@media (max-width: 992px) {
-    .slider-text h1 {
+.slider-text h1 {
     margin: 0;
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 7vw, 5rem);
     font-weight: bold;
-}
-.slider-text p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .slider-text h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: bold;
-}
 .slider-text p {
-    margin-top: 15px;
-    font-size: 1.2rem;
-}
+    margin-top: 20px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-/* Small phones */
-@media (max-width: 480px) {
-    .slider-text h1 {
-    margin: 0;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.slider-text p {
-    margin-top: 15px;
-    font-size: 0.5rem;
-}
-}
 .quote-btn {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 14px 32px;
+
     background: #c62828;
     color: white;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
+
     border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.4s ease;
+
+    transition: .3s ease;
 }
-.quote-btn.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    animation: pulse 2s infinite;
-}
+
 .quote-btn:hover {
     background: #a71d1d;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
-@media screen and (max-width: 768px) {
-    .slider {
-    height: 400px;
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .hero-video {
+        height: 80vh;
+        min-height: 450px;
     }
+
+    .quote-btn {
+        padding: 12px 24px;
+        font-size: .9rem;
+    }
+
 }
-@media screen and (max-width: 2000px) {
-    .slider {
-    height: 700px;
-    width: 100%;
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .hero-video {
+        height: 70vh;
+        min-height: 400px;
     }
+
+    .slider-text {
+        width: 95%;
+    }
+
 }
 
 /* WHITE SECTION */
