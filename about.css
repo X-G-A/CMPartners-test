@@ -288,58 +288,48 @@
 /* Phone */
 @media (max-width: 768px) {
 
-    .black {
-        padding: 80px 15px;
-    }
-
     .team-members {
-        width: 100%;
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 8px;
         justify-items: center;
     }
 
     .member {
-        width: 100%;
-        aspect-ratio: 0.58;
-        max-width: 85px;
-
-        height: auto;
+        width: 70px;
+        height: 120px;
     }
 
     .member-overlay {
-        padding: 8px 4px;
+        padding: 6px 3px;
     }
 
     .member-overlay h3 {
-        font-size: 0.65rem;
+        font-size: 0.55rem;
     }
 
     .member-overlay p {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
     }
 
     .join-team {
         grid-column: 1 / -1;
-
         width: 100%;
-        max-width: none;
-        height: 70px;
+        height: 60px;
+        max-width: 100%;
 
-        border-radius: 50px;
+        border-radius: 40px;
 
         flex-direction: row;
         gap: 10px;
     }
 
     .join-team span:first-child {
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin: 0;
     }
 
     .join-team span:last-child {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 }
 
