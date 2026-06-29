@@ -136,21 +136,26 @@
     gap: 60px;
     padding: 100px clamp(20px, 5vw, 80px) 40px;
 }
+
 .about-image {
     flex: 1;
 }
+
 .about-image img {
     width: 100%;
     display: block;
     border-radius: 10px;
 }
+
 .about-content {
     flex: 1;
 }
+
 .about-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
+
 .about-content p {
     line-height: 1.8;
     color: #555;
@@ -238,6 +243,38 @@
     }
 }
 
+@media (max-width: 768px) {
+
+    .team-members {
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .member {
+        width: 30%;
+        height: 180px;
+        min-width: 0;
+    }
+
+    .member:nth-child(4),
+    .member:nth-child(5) {
+        display: none;
+    }
+
+    .member-overlay {
+        padding: 15px 8px;
+    }
+
+    .member-overlay h3 {
+        font-size: 0.75rem;
+    }
+
+    .member-overlay p {
+        font-size: 0.65rem;
+    }
+}
+
 
 /* BLACK SECTION */
 .black {
@@ -267,8 +304,18 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+
     .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .project-card {
+        height: 180px;
     }
 }
 
@@ -402,4 +449,40 @@
 .projects-btn:hover {
     background: #a71d1d;
     transform: translateY(-3px);
+}
+
+/* ==================================================
+   PHONE LAYOUT IMPROVEMENTS
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* About section */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px 40px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+        flex: unset;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .about-content p {
+        text-align: justify;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .project-card {
+        height: 150px;
+    }
 }

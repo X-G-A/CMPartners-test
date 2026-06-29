@@ -130,26 +130,80 @@
     gap: 25px;
 }
 
+/* Tablet */
 @media (max-width: 992px) {
 
     .team-members {
         grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
     }
 
 }
 
+/* Phone */
 @media (max-width: 768px) {
 
     .team-members {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .member {
+        width: 90px;
+        height: 160px;
+    }
+
+    .member-overlay {
+        padding: 10px 5px;
+    }
+
+    .member-overlay h3 {
+        font-size: 0.7rem;
+    }
+
+    .member-overlay p {
+        font-size: 0.6rem;
+    }
+
+    /* Make Join Team full width */
+    .join-team {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 350px;
+        height: 80px;
+
+        border-radius: 50px;
+
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .join-team span:first-child {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .join-team span:last-child {
+        font-size: 0.9rem;
     }
 
 }
 
+/* Very small phones */
 @media (max-width: 480px) {
 
     .team-members {
-        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .member {
+        width: 80px;
+        height: 140px;
+    }
+
+    .join-team {
+        height: 70px;
     }
 
 }
@@ -240,23 +294,50 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 25px;
 }
-
+/* Tablet */
 @media (max-width: 992px) {
-    .mv-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .mvrv-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Phone */
 @media (max-width: 768px) {
-    .mv-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .mvrv-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
+
+    .mvrv-card {
+        width: 100%;
+        min-height: 50px; /* was 200px */
+        padding: 20px 20px; /* reduced padding */
+    }
+
+    .mvrv-card h3 {
+        margin-bottom: 12px;
+        font-size: 1.2rem;
+    }
+
+    .mvrv-card p {
+        line-height: 1.6;
+    }
+
 }
 
+/* Small phones */
 @media (max-width: 480px) {
-    .mv-grid {
-        grid-template-columns: 1fr;
+
+    .mvrv-container {
+        width: 95%;
     }
+
+    .mvrv-card {
+        min-height: 50px;
+        padding: 18px 15px;
+    }
+
 }
 .mvrv-card-link {
     display: block;
