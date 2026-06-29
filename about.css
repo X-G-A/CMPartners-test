@@ -29,9 +29,10 @@
     margin-bottom: 20px;
 }
 .about-content p {
-    line-height: 1.8;
+    line-height: 1.7;
     color: #555;
     text-align: justify;
+    font-size: 1rem;
 }
 /* HISTORY SLIDER */
 .history-slider {
@@ -82,6 +83,7 @@
     max-width: 90%;
     margin: 20px auto 0;
     flex-grow: 1;
+    font-size: 1rem;
 }
 .history-controls {
     display: flex;
@@ -108,6 +110,77 @@
 .history-controls button:hover {
     background: #c62828;
 }
+/* ==================================================
+   ABOUT PAGE MOBILE LAYOUT
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* About section */
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px 40px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+        flex: unset;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .about-content {
+        text-align: center;
+    }
+
+    .about-content p {
+        text-align: justify;
+        font-size: 12px;
+    }
+
+    /* History section */
+    .history-slider {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px 80px;
+    }
+
+    .history-image {
+        width: 100%;
+        order: -1; /* image appears above text */
+    }
+
+    .history-image img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .history-content {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .history-content p {
+        max-width: 100%;
+        text-align: justify;
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .about-image img,
+    .history-image img {
+        height: 220px;
+    }
+
+}
 
 /* OUR TEAM */
 .black {
@@ -129,85 +202,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
 }
-
-/* Tablet */
-@media (max-width: 992px) {
-
-    .team-members {
-        grid-template-columns: repeat(3, 1fr);
-        justify-items: center;
-    }
-
-}
-
-/* Phone */
-@media (max-width: 768px) {
-
-    .team-members {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        justify-items: center;
-    }
-
-    .member {
-        width: 90px;
-        height: 160px;
-    }
-
-    .member-overlay {
-        padding: 10px 5px;
-    }
-
-    .member-overlay h3 {
-        font-size: 0.7rem;
-    }
-
-    .member-overlay p {
-        font-size: 0.6rem;
-    }
-
-    /* Make Join Team full width */
-    .join-team {
-        grid-column: 1 / -1;
-        width: 100%;
-        max-width: 350px;
-        height: 80px;
-
-        border-radius: 50px;
-
-        flex-direction: row;
-        gap: 12px;
-    }
-
-    .join-team span:first-child {
-        font-size: 2rem;
-        margin: 0;
-    }
-
-    .join-team span:last-child {
-        font-size: 0.9rem;
-    }
-
-}
-
-/* Very small phones */
-@media (max-width: 480px) {
-
-    .team-members {
-        gap: 10px;
-    }
-
-    .member {
-        width: 80px;
-        height: 140px;
-    }
-
-    .join-team {
-        height: 70px;
-    }
-
-}
-.member {
+.member{
     position: relative;
     width: 140px;
     height: 240px;
@@ -278,6 +273,84 @@
     font-weight: bold;
     letter-spacing: 1px;
     text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    .team-members {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+
+}
+
+/* Phone */
+@media (max-width: 768px) {
+
+    .team-members {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .member {
+        width: 140px;
+        height: 200px;
+    }
+
+    .member-overlay {
+        padding: 10px 5px;
+    }
+
+    .member-overlay h3 {
+        font-size: 0.7rem;
+    }
+
+    .member-overlay p {
+        font-size: 0.6rem;
+    }
+
+    /* Make Join Team full width */
+    .join-team {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 350px;
+        height: 80px;
+
+        border-radius: 50px;
+
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .join-team span:first-child {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .join-team span:last-child {
+        font-size: 0.9rem;
+    }
+
+}
+
+/* Very small phones */
+@media (max-width: 480px) {
+
+    .team-members {
+        gap: 15px;
+    }
+
+    .member {
+        width: 140px;
+        height: 200px;
+    }
+
+    .join-team {
+        height: 70px;
+    }
+
 }
 
 /* MVRV SECTION */
