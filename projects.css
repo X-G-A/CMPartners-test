@@ -281,3 +281,36 @@
         text-align: center;
     }
 }
+/* ==================================================
+   PROJECT OVERLAY MOBILE
+================================================== */
+
+@media (max-width: 768px) {
+
+    .project-overlay {
+        padding: 10px;
+    }
+
+    .project-overlay h3 {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+
+    .project-overlay p {
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .project-overlay h3 {
+        font-size: 0.75rem;
+    }
+
+    .project-overlay p {
+        font-size: 0.65rem;
+    }
+
+}
