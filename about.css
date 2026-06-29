@@ -286,44 +286,51 @@
 }
 
 /* Phone */
-/* Phone */
 @media (max-width: 768px) {
 
+    .black {
+        padding: 80px 15px;
+    }
+
     .team-members {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
         justify-items: center;
     }
 
     .member {
         width: 100%;
-        max-width: 90px;
-        height: 160px;
+        aspect-ratio: 0.58;
+        max-width: 85px;
+
+        height: auto;
     }
 
     .member-overlay {
-        padding: 10px 5px;
+        padding: 8px 4px;
     }
 
     .member-overlay h3 {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     .member-overlay p {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
     }
 
-    /* Join Team button */
     .join-team {
         grid-column: 1 / -1;
+
         width: 100%;
-        max-width: 320px;
-        height: 75px;
+        max-width: none;
+        height: 70px;
 
         border-radius: 50px;
 
         flex-direction: row;
-        gap: 12px;
+        gap: 10px;
     }
 
     .join-team span:first-child {
@@ -332,7 +339,7 @@
     }
 
     .join-team span:last-child {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -340,16 +347,11 @@
 @media (max-width: 480px) {
 
     .team-members {
-        gap: 10px;
+        gap: 8px;
     }
 
     .member {
         max-width: 75px;
-        height: 135px;
-    }
-
-    .join-team {
-        height: 65px;
     }
 }
 
