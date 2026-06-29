@@ -1,5 +1,5 @@
 /* ==========================================================================
-   PROJECT PAGE SPECIFIC STYLES (ZM_residential.css)
+   PROJECT PAGE SPECIFIC STYLES
    ========================================================================== */
 
 /* 1. Project Title Banner */
@@ -70,7 +70,7 @@
   background-color: #f0f0f0; /* Light gray placeholder background */
   border-radius: 4px;
   display: block;
-  height: auto;
+  height: 150px;
   min-height: 400px; /* Gives structural height to blank image slots */
   object-fit: cover;
   width: 100%;
@@ -102,6 +102,6 @@
   }
 
   .project-images img {
-    height: 450px; /* Standardized uniform height for desktop view grid */
+    height: 150px; /* Standardized uniform height for desktop view grid */
   }
 }
