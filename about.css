@@ -286,17 +286,19 @@
 }
 
 /* Phone */
+/* Phone */
 @media (max-width: 768px) {
 
     .team-members {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
         justify-items: center;
     }
 
     .member {
-        width: 140px;
-        height: 200px;
+        width: 100%;
+        max-width: 90px;
+        height: 160px;
     }
 
     .member-overlay {
@@ -311,12 +313,12 @@
         font-size: 0.6rem;
     }
 
-    /* Make Join Team full width */
+    /* Join Team button */
     .join-team {
         grid-column: 1 / -1;
         width: 100%;
-        max-width: 350px;
-        height: 80px;
+        max-width: 320px;
+        height: 75px;
 
         border-radius: 50px;
 
@@ -332,25 +334,23 @@
     .join-team span:last-child {
         font-size: 0.9rem;
     }
-
 }
 
 /* Very small phones */
 @media (max-width: 480px) {
 
     .team-members {
-        gap: 15px;
+        gap: 10px;
     }
 
     .member {
-        width: 140px;
-        height: 200px;
+        max-width: 75px;
+        height: 135px;
     }
 
     .join-team {
-        height: 70px;
+        height: 65px;
     }
-
 }
 
 /* MVRV SECTION */
