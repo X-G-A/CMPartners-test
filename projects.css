@@ -145,6 +145,39 @@
     color: white;
 }
 
+.projects-toolbar{
+    max-width:1200px;
+    margin:0 auto 30px;
+    padding:0 clamp(20px,5vw,80px);
+
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:12px;
+}
+
+.projects-toolbar label{
+    font-weight:600;
+}
+
+.projects-toolbar select{
+    padding:10px 16px;
+    border:1px solid #ddd;
+    border-radius:25px;
+    font-size:.95rem;
+    background:#fff;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+    .projects-toolbar{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+}
+
 /* Projects Grid - 4 Columns */
 .projects-grid-4col {
     display: grid;

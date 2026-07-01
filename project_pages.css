@@ -68,7 +68,7 @@
 
 .project-images img {
   background-color: #f0f0f0; /* Light gray placeholder background */
-  border-radius: 4px;
+  border-radius: 10px;
   display: block;
   height: 150px;
   min-height: 400px; /* Gives structural height to blank image slots */
@@ -104,4 +104,57 @@
   .project-images img {
     height: 150px; /* Standardized uniform height for desktop view grid */
   }
+}
+
+/* ==========================================================================
+   FLOATING BACK TO PROJECTS BUTTON
+   ========================================================================== */
+
+.back-projects-floating {
+    position: fixed;
+    top: 100px;
+    left: 30px;
+
+    width: auto;
+    height: 50px;
+    padding: 0.2px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c62828;
+    color: #fff;
+    text-decoration: none;
+
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    transition: all .3s ease;
+    z-index: 999;
+}
+
+.back-projects-floating:hover {
+    background: #a71d1d;
+    transform: translateY(-5px);
+}
+
+.back-projects-floating:active {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+
+    .back-projects-floating {
+        left: 20px;
+        bottom: 20px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+    }
+
 }

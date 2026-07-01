@@ -1,24 +1,24 @@
 /* Projects Data */
 const projectsData = {
     residential: {
-        img: "slider_img_1.jpg",
+        img: "slider_img_2.jpg",
         name: "Residential Projects"
     },
     commercial: {
-        img: "slider_img_2.jpg",
+        img: "slider_img_1.jpg",
         name: "Commercial Projects"
     },
-    mixed: {
+    intfitout: {
         img: "slider_img_3.jpg",
-        name: "Mixed-Use Projects"
+        name: "Interior Fit Out Projects"
     },
     institutional: {
         img: "slider_img_4.jpg",
         name: "Institutional Projects"
     },
-    industrial: {
+    offfitout: {
         img: "slider_img_5.jpg",
-        name: "Industrial Projects"
+        name: "Office Fit Out Projects"
     },
     renovation: {
         img: "slider_img_1.jpg",
@@ -101,3 +101,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+const sortSelect = document.getElementById("sortProjects");
+
+if (sortSelect) {
+
+    sortSelect.addEventListener("change", () => {
+
+        const grid = document.querySelector(".projects-grid-4col");
+
+        const cards = [...grid.querySelectorAll(".project-link")];
+
+        switch (sortSelect.value) {
+
+            case "newest":
+                cards.sort((a, b) =>
+                    new Date(b.dataset.date) - new Date(a.dataset.date)
+                );
+                break;
+
+            case "oldest":
+                cards.sort((a, b) =>
+                    new Date(a.dataset.date) - new Date(b.dataset.date)
+                );
+                break;
+
+            case "az":
+                cards.sort((a, b) =>
+                    a.dataset.name.localeCompare(b.dataset.name)
+                );
+                break;
+
+            case "za":
+                cards.sort((a, b) =>
+                    b.dataset.name.localeCompare(a.dataset.name)
+                );
+                break;
+        }
+
+        cards.forEach(card => grid.appendChild(card));
+
+    });
+
+}
