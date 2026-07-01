@@ -10,7 +10,7 @@ const projectsData = {
     },
     intfitout: {
         img: "slider_img_3.jpg",
-        name: "Interior Fit Out Projects"
+        name: "Modular Projects"
     },
     institutional: {
         img: "slider_img_4.jpg",
