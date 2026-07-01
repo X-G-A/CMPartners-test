@@ -117,7 +117,7 @@
 
     width: auto;
     height: 50px;
-    padding: 0.2px 20px;
+    padding: 0 20px;
 
     display: flex;
     align-items: center;
@@ -136,6 +136,16 @@
     z-index: 999;
 }
 
+/* Desktop text */
+.desktop-text {
+    display: inline;
+}
+
+/* Hidden on desktop */
+.mobile-text {
+    display: none;
+}
+
 .back-projects-floating:hover {
     background: #a71d1d;
     transform: translateY(-5px);
@@ -145,16 +155,31 @@
     transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
 @media (max-width: 768px) {
 
     .back-projects-floating {
-        left: 20px;
-        bottom: 20px;
+        top: 90px;
+        left: 15px;
 
         width: 45px;
         height: 45px;
+        padding: 0;
 
+        border-radius: 50%;
         font-size: 22px;
+    }
+
+    .desktop-text {
+        display: none;
+    }
+
+    .mobile-text {
+        display: inline;
+        line-height: 1;
     }
 
 }
