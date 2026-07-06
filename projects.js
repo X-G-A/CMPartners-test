@@ -1,27 +1,27 @@
 
 const projectsData = {
     residential: {
-        img: "slider_img_2.jpg",
+        img: "ZM_residential/ZM_residence_exterior.jpg",
         name: "Residential Projects"
     },
     commercial: {
-        img: "slider_img_1.jpg",
+        img: "ADP SM Aura_commercial/ADP 1.jpg",
         name: "Commercial Projects"
     },
     modular: {
-        img: "slider_img_3.jpg",
+        img: "Dungca T&B_renovation/Dungca T&B 1.jpg",
         name: "Modular Projects"
     },
     institutional: {
-        img: "slider_img_4.jpg",
+        img: "DA office_commercial/DA Office 1.jpg",
         name: "Institutional Projects"
     },
     fitout: {
-        img: "slider_img_5.jpg",
+        img: "Burbank - Sy Condo_residential/Burbank - Sy Condo 5.jpg",
         name: "Fit Out Projects"
     },
     renovation: {
-        img: "slider_img_1.jpg",
+        img: "Villaroman Condo_residential/Villaroman Condo 1.jpg",
         name: "Renovation Projects"
     }
 };

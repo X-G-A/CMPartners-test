@@ -2,23 +2,23 @@ const historyData = [
     {
         year: "2008",
         desc: "C&M Partners was founded with a vision to deliver quality design and build services.",
-        img: "slider_img_1.jpg"
+        img: ""
     },
     {
-        year: "2012",
-        desc: "Expanded into commercial construction projects across Metro Manila.",
-        img: "slider_img_2.jpg"
-    },
-    {
-        year: "2016",
-        desc: "Introduced modern design-build systems and project management upgrades.",
-        img: "slider_img_3.jpg"
+        year: "2014",
+        desc: "Expanded with integrity through connections that remain present today.",
+        img: "History_2012_img.jpg"
     },
     {
         year: "2022",
-        desc: "Recognized for excellence in residential and large-scale developments.",
-        img: "slider_img_4.jpg"
-    }
+        desc: "Continued to build upon the foundation of our team, and the foundation of the future.",
+        img: "History_2012_img.jpg"
+    },
+    {
+        year: "2026",
+        desc: "Recognized for excellence from modular construction to large-scale development.",
+        img: "ZM_residential/ZM_residence_exterior.jpg"
+    },
 ];
 
 let current = 0;
