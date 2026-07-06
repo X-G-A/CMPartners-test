@@ -1,4 +1,4 @@
-/* ABOUT US */
+
 .white {
     background: white;
     color: black;
@@ -34,7 +34,7 @@
     text-align: justify;
     font-size: 1rem;
 }
-/* HISTORY SLIDER */
+
 .history-slider {
     max-width: 1200px;
     margin: auto;
@@ -110,13 +110,9 @@
 .history-controls button:hover {
     background: #c62828;
 }
-/* ==================================================
-   ABOUT PAGE MOBILE LAYOUT
-================================================== */
 
 @media (max-width: 768px) {
 
-    /* About section */
     .about-container {
         flex-direction: column;
         gap: 30px;
@@ -143,7 +139,6 @@
         font-size: 12px;
     }
 
-    /* History section */
     .history-slider {
         flex-direction: column;
         gap: 30px;
@@ -152,7 +147,7 @@
 
     .history-image {
         width: 100%;
-        order: -1; /* image appears above text */
+        order: -1;
     }
 
     .history-image img {
@@ -182,7 +177,6 @@
 
 }
 
-/* OUR TEAM */
 .black {
     background: #111;
     color: white;
@@ -275,7 +269,6 @@
     text-align: center;
 }
 
-/* Tablet */
 @media (max-width: 992px) {
 
     .team-members {
@@ -285,7 +278,6 @@
 
 }
 
-/* Phone */
 @media (max-width: 768px) {
 
     .team-members {
@@ -333,7 +325,6 @@
     }
 }
 
-/* Very small phones */
 @media (max-width: 480px) {
 
     .team-members {
@@ -344,8 +335,6 @@
         max-width: 75px;
     }
 }
-
-/* MVRV SECTION */
 
 .mvrv-container {
     width: 90%;
@@ -359,14 +348,13 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 25px;
 }
-/* Tablet */
+
 @media (max-width: 992px) {
     .mvrv-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Phone */
 @media (max-width: 768px) {
 
     .mvrv-grid {
@@ -376,8 +364,8 @@
 
     .mvrv-card {
         width: 100%;
-        min-height: 50px; /* was 200px */
-        padding: 20px 20px; /* reduced padding */
+        min-height: 50px;
+        padding: 20px 20px;
     }
 
     .mvrv-card h3 {
@@ -391,7 +379,6 @@
 
 }
 
-/* Small phones */
 @media (max-width: 480px) {
 
     .mvrv-container {
@@ -466,10 +453,8 @@
 .values-card {
     display: block !important;
     text-align: left !important;
-    padding-left: 10px; /* Optional: adds a neat little left indent */
+    padding-left: 10px;
 }
-
-/* spacing between sections */
 
 .black {
     background: #111;

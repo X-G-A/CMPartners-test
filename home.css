@@ -1,6 +1,4 @@
-/* ==================================================
-   HERO VIDEO
-================================================== */
+
 
 .hero-video {
     position: relative;
@@ -87,7 +85,6 @@
     transform: translateY(-3px);
 }
 
-/* Tablets */
 @media (max-width: 768px) {
 
     .hero-video {
@@ -102,7 +99,6 @@
 
 }
 
-/* Small phones */
 @media (max-width: 480px) {
 
     .hero-video {
@@ -116,16 +112,15 @@
 
 }
 
-/* WHITE SECTION */
 .white {
     background: white;
     color: black;
 }
 .about-link{
-    text-decoration: none !important; /* Forces removal of text decoration */
+    text-decoration: none !important;
     border: black;
-    color: inherit; /* Prevents the link from turning default blue/purple */
-    display: block; /* Ensures the link wraps the card layout perfectly */
+    color: inherit;
+    display: block;
 }
 .about-container {
     max-width: 1200px;
@@ -275,18 +270,16 @@
     }
 }
 
-
-/* BLACK SECTION */
 .black {
     background: #111;
     color: white;
     padding: 100px clamp(20px, 5vw, 80px);
 }
 .project-link{
-    text-decoration: none !important; /* Forces removal of text decoration */
+    text-decoration: none !important;
     border: black;
-    color: inherit; /* Prevents the link from turning default blue/purple */
-    display: block; /* Ensures the link wraps the card layout perfectly */
+    color: inherit;
+    display: block;
 }
 .services-grid {
     display: grid;
@@ -295,14 +288,12 @@
     margin-bottom: 120px;
 }
 
-/* Tablet */
 @media (max-width: 992px) {
     .services-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
 
     .services-grid {
@@ -319,7 +310,6 @@
     }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
     .services-grid {
         grid-template-columns: 1fr;
@@ -375,8 +365,6 @@
     margin: 0;
 }
 
-
-/* IMAGE SECTION */
 .project-tours {
     background: url("sketch_wallpaper.jpg") center/cover no-repeat;
     position: relative;
@@ -384,7 +372,7 @@
     text-align: center;
     padding: 100px 20px;
 }
-/* dark overlay */
+
 .project-tours::before {
     content: "";
     position: absolute;
@@ -406,7 +394,7 @@
     margin-bottom: 40px;
     font-size: 1.1rem;
 }
-/* video box */
+
 .video-box {
     width: 100%;
     height: 400px;
@@ -421,7 +409,7 @@
     height: 100%;
     border: none;
 }
-/* quote */
+
 .quote {
     margin-bottom: 50px;
 }
@@ -435,7 +423,7 @@
     margin-top: 10px;
     color: #bbb;
 }
-/* button */
+
 .projects-btn {
     display: inline-block;
     padding: 14px 30px;
@@ -451,13 +439,8 @@
     transform: translateY(-3px);
 }
 
-/* ==================================================
-   PHONE LAYOUT IMPROVEMENTS
-================================================== */
-
 @media (max-width: 768px) {
 
-    /* About section */
     .about-container {
         flex-direction: column;
         gap: 30px;

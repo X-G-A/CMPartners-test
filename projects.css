@@ -1,4 +1,4 @@
-/* Projects Main Section */
+
 .projects-main {
     max-width: 1200px;
     margin: 0 auto;
@@ -10,7 +10,6 @@
     position: relative;
 }
 
-/* Center Circle */
 .center-circle {
     width: clamp(220px, 40vw, 450px);
     height: clamp(220px, 40vw, 450px);
@@ -71,7 +70,6 @@
     transform: scale(1.05);
 }
 
-/* Left Categories */
 .categories-left {
     display: flex;
     flex-direction: column;
@@ -87,7 +85,6 @@
     margin-bottom: 20px;
 }
 
-/* Right Categories */
 .categories-right {
     display: flex;
     flex-direction: column;
@@ -103,7 +100,6 @@
     margin-bottom: 20px;
 }
 
-/* Category Buttons */
 .category-btn {
     background: none;
     border: 2px solid #c62828;
@@ -178,7 +174,6 @@
 
 }
 
-/* Projects Grid - 4 Columns */
 .projects-grid-4col {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -190,10 +185,10 @@
 }
 
 .project-link {
-    text-decoration: none !important; /* Forces removal of text decoration */
+    text-decoration: none !important;
     border: black;
-    color: inherit; /* Prevents the link from turning default blue/purple */
-    display: block; /* Ensures the link wraps the card layout perfectly */
+    color: inherit;
+    display: block;
 }
 
 .project-card {
@@ -203,7 +198,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: opacity 0.4s ease, transform 0.4s ease;
-    border: 1px solid #00000089; 
+    border: 1px solid #00000089;
     box-sizing: border-box;
 }
 
@@ -260,9 +255,6 @@
     color: #ddd;
     font-size: 0.9rem;
 }
-/* ==================================================
-   PROJECT FILTER RESPONSIVE
-================================================== */
 
 @media (max-width: 768px) {
 
@@ -272,12 +264,10 @@
         padding: 120px 20px 60px;
     }
 
-    /* Hide center image on tablets/phones */
     .center-circle {
         display: none;
     }
 
-    /* Make both sides become full-width rows */
     .categories-left,
     .categories-right {
         width: 100%;
@@ -291,7 +281,6 @@
         gap: 15px;
     }
 
-    /* Remove desktop spacing tweaks */
     .categories-left .category-btn:nth-child(1),
     .categories-left .category-btn:nth-child(3),
     .categories-right .category-btn:nth-child(1),
@@ -314,9 +303,6 @@
         text-align: center;
     }
 }
-/* ==================================================
-   PROJECT OVERLAY MOBILE
-================================================== */
 
 @media (max-width: 768px) {
 

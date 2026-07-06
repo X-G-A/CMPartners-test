@@ -32,7 +32,6 @@ const nextBtn = document.getElementById("nextHistory");
 
 function updateHistory(direction = "next") {
 
-    // fade out
     imgEl.classList.add("history-fade");
 
     setTimeout(() => {
@@ -41,7 +40,6 @@ function updateHistory(direction = "next") {
         descEl.textContent = historyData[current].desc;
         imgEl.src = historyData[current].img;
 
-        // fade in
         imgEl.classList.remove("history-fade");
 
     }, 300);
@@ -56,10 +54,6 @@ nextBtn.addEventListener("click", () => {
     current = (current + 1) % historyData.length;
     updateHistory("next");
 });
-
-/* ========================================
-   MISSION / VISION / RECOGNITIONS
-======================================== */
 
 const mvData = {
     mission: {
@@ -85,18 +79,18 @@ const mvText = document.getElementById("mvText");
 mvButtons.forEach(button => {
     button.addEventListener("click", () => {
         const tab = button.dataset.tab;
-        // active state
+
         mvButtons.forEach(btn =>
             btn.classList.remove("active")
         );
         button.classList.add("active");
-        // fade out
+
         mvImage.style.opacity = "0";
         mvText.style.opacity = "0";
         setTimeout(() => {
             mvImage.src = mvData[tab].image;
-            mvText.innerHTML = mvData[tab].text; // Changed from textContent to innerHTML
-            
+            mvText.innerHTML = mvData[tab].text;
+
             mvImage.style.opacity = "1";
             mvText.style.opacity = "1";
         }, 300);

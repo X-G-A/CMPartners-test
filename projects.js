@@ -1,4 +1,4 @@
-/* Projects Data */
+
 const projectsData = {
     residential: {
         img: "slider_img_2.jpg",
@@ -33,17 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainImage = document.getElementById("mainProjectImg");
     const sortSelect = document.getElementById("sortProjects");
 
-    // Store default center image
     const defaultImage = mainImage.src;
 
-    // Show all projects on load
     projectLinks.forEach(link => {
         link.style.display = "block";
     });
-
-    /* ==========================
-       CATEGORY FILTER
-    ========================== */
 
     buttons.forEach(button => {
 
@@ -52,10 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const category = button.dataset.category;
             const wasActive = button.classList.contains("active");
 
-            // Remove active from every button
             buttons.forEach(btn => btn.classList.remove("active"));
 
-            // Clicking active button again resets everything
             if (wasActive) {
 
                 projectLinks.forEach(link => {
@@ -72,10 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Activate clicked button
             button.classList.add("active");
 
-            // Change center image
             if (projectsData[category]) {
 
                 mainImage.style.opacity = "0";
@@ -87,11 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            // Filter projects
             projectLinks.forEach(link => {
 
-                // Supports multiple categories:
-                // data-category="residential,commercial"
                 const categories = link.dataset.category
                     .split(",")
                     .map(cat => cat.trim());
@@ -107,10 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     });
-
-    /* ==========================
-       SORTING
-    ========================== */
 
     if (sortSelect) {
 

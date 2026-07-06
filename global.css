@@ -1,6 +1,4 @@
-/* ==================================================
-   HERO SECTIONS
-================================================== */
+
 
 .about-title {
     background: url("sketch_wallpaper.jpg") center/cover no-repeat;
@@ -37,11 +35,6 @@
     letter-spacing: 2px;
 }
 
-
-/* ==================================================
-   GLOBAL RESET
-================================================== */
-
 * {
     box-sizing: border-box;
 }
@@ -67,11 +60,6 @@ img {
     max-width: 100%;
     display: block;
 }
-
-
-/* ==================================================
-   NAVBAR
-================================================== */
 
 .navbar {
     position: fixed;
@@ -201,11 +189,6 @@ img {
     color: black;
 }
 
-
-/* ==================================================
-   GLOBAL ANIMATIONS
-================================================== */
-
 .fade-in {
     opacity: 0;
     animation: fadeInUp 0.6s ease forwards;
@@ -290,11 +273,6 @@ img {
     }
 }
 
-
-/* ==================================================
-   BACK TO TOP
-================================================== */
-
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -332,11 +310,6 @@ img {
     transform: translateY(-5px);
 }
 
-
-/* ==================================================
-   PAGE TRANSITIONS
-================================================== */
-
 .page-slider {
     position: fixed;
     inset: 0;
@@ -365,11 +338,6 @@ img {
     opacity: .9;
 }
 
-
-/* ==================================================
-   GLOBAL LAYOUT
-================================================== */
-
 .section {
     width: 100%;
 }
@@ -379,11 +347,6 @@ img {
     font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 50px;
 }
-
-
-/* ==================================================
-   FOOTER
-================================================== */
 
 .footer-section {
     width: 100%;
@@ -410,7 +373,7 @@ img {
 .footer-col {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Same spacing for Contact and Follow Us */
+    gap: 10px;
     padding: 20px;
 }
 
@@ -455,7 +418,7 @@ img {
 .socials {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Matches Contact spacing exactly */
+    gap: 10px;
 }
 
 .socials a {
@@ -469,11 +432,6 @@ img {
     color: white;
     transform: translateX(5px);
 }
-
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 992px) {
 
@@ -591,10 +549,6 @@ img {
     }
 
 }
-
-/* ==================================================
-   GLOBAL TEXT RESPONSIVENESS
-================================================== */
 
 p {
     font-size: clamp(0.95rem, 2vw, 1.1rem);
