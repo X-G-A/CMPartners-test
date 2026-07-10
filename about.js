@@ -12,7 +12,7 @@ const historyData = [
     {
         year: "2022",
         desc: "Continued to build upon the foundation of our team, and the foundation of the future.",
-        img: "History_2012_img.jpg"
+        img: "History_2022_img.jpg"
     },
     {
         year: "2026",
