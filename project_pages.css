@@ -52,6 +52,13 @@
   margin: 0;
 }
 
+.web-link {
+  color: #666666;
+  font-size: 1.1rem;
+  margin: 0;
+  text-decoration: none;
+}
+
 .project-images {
   display: flex;
   flex-direction: column;
