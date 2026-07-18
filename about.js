@@ -1,7 +1,7 @@
 const historyData = [
     {
         year: "2008",
-        desc: "C&M Partners was founded with a vision to deliver quality design and build services.",
+        desc: "CM Partners was founded by Ediver Correa and Andreanne Molano, with a vision to deliver quality design and build services.",
         img: ""
     },
     {
